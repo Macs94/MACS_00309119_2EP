@@ -8,9 +8,16 @@
       <e p="SourceCode" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Form1.cs" t="Include" />
-        <e p="Form1.Designer.cs" t="Include" />
+        <e p="Controladores" t="Include">
+          <e p="Encriptador.cs" t="Include" />
+        </e>
+        <e p="Modelo" t="Include">
+          <e p="AppUser.cs" t="Include" />
+          <e p="AppUserDAO.cs" t="Include" />
+          <e p="ConnectionBD.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
@@ -20,6 +27,16 @@
           <e p="Settings.settings" t="Include" />
         </e>
         <e p="SourceCode.csproj" t="IncludeRecursive" />
+        <e p="Vista" t="Include">
+          <e p="frmInicioSesion.cs" t="Include" />
+          <e p="frmInicioSesion.Designer.cs" t="Include" />
+          <e p="frmInicioSesion.resx" t="Include" />
+          <e p="frmModUsuario.cs" t="Include" />
+          <e p="frmModUsuario.Designer.cs" t="Include" />
+          <e p="frmPrincipal.cs" t="Include" />
+          <e p="frmPrincipal.Designer.cs" t="Include" />
+          <e p="frmPrincipal.resx" t="Include" />
+        </e>
       </e>
       <e p="SourceCode.sln" t="IncludeFlat" />
     </e>
