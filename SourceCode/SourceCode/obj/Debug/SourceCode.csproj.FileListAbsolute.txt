@@ -1,0 +1,8 @@
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\SourceCode.exe.config
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\SourceCode.exe
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\SourceCode.pdb
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.csprojAssemblyReference.cache
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.Properties.Resources.resources
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.csproj.GenerateResource.cache
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.exe
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.pdb
