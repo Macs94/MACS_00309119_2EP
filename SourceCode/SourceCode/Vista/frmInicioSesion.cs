@@ -18,10 +18,24 @@ namespace SourceCode
         {
             InitializeComponent();
         }
+        private void frmInicioSesion_Load(object sender, EventArgs e)
+        {
+            poblarControles();
+        }
+        private void poblarControles()
+        {
+            // Actualizar ComboBox
+            cmbUsuario.DataSource = null;
+            cmbUsuario.ValueMember = "password";
+            cmbUsuario.DisplayMember = "username";
+            cmbUsuario.DataSource = AppUserDAO.getLista();
+        }
 
         private void btnModUsuario_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            frmModUsuario unaVentana = new frmModUsuario();
+            unaVentana.ShowDialog();
+            poblarControles();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -31,7 +45,7 @@ namespace SourceCode
                 AppUser u = (AppUser) cmbUsuario.SelectedItem;
                 
                 MessageBox.Show("¡Bienvenido!", 
-                    "JUMBO - Bottled coffee", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "HugoApp - Food delivery", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     
                 frmPrincipal ventana = new frmPrincipal(u);
                 ventana.Owner = this;
@@ -46,17 +60,6 @@ namespace SourceCode
             }
         }
 
-        private void frmInicioSesion_Load(object sender, EventArgs e)
-        {
-            poblarControles();
-        }
-        private void poblarControles()
-        {
-            // Actualizar ComboBox
-            cmbUsuario.DataSource = null;
-            cmbUsuario.ValueMember = "password";
-            cmbUsuario.DisplayMember = "username";
-            cmbUsuario.DataSource = AppUserDAO.getLista();
-        }
+  
     }
 }

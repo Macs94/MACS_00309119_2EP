@@ -9,7 +9,7 @@ namespace SourceCode.Modelo
     {
         public static List<AppUser> getLista()
         {
-            string query = "select * from AppUser";
+            string query = "select * from \"AppUser\"";
 
             DataTable dt = ConnectionBD.ExecuteQuery(query);
 
@@ -32,13 +32,13 @@ namespace SourceCode.Modelo
         public static void actualizarContra(int idUser, string newPassword)
         {
             string act = String.Format(
-                "update AppUser set password='{0}' where idUser='{1}';",
+                "update \"AppUser\" set password='{0}' where \"idUser\"={1};",
                 newPassword, idUser);
             
             ConnectionBD.ExecuteNonQuery(act);
         }
 
-        public static void agregarUsuario( AppUser u)
+        public static void addUser( AppUser u)
         {
             u.password = Encriptador.CrearMD5(u.username);
             string act = String.Format(
@@ -50,11 +50,11 @@ namespace SourceCode.Modelo
             ConnectionBD.ExecuteNonQuery(act);
         }
         
-        public static void eliminar(string username)
+        public static void eliminarUser(int idUser)
         {
             string act = String.Format(
-                "delete from AppUser where idUser='{0}';",
-                username);
+                "delete from \"AppUser\" where \"idUser\"={0};",
+                idUser);
             
             ConnectionBD.ExecuteNonQuery(act);
         }
