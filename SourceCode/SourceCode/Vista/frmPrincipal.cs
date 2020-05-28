@@ -225,8 +225,8 @@ namespace SourceCode.Vista
                 AddressDAO.removeAddress((int) cmbAddressId.SelectedValue);
                 MessageBox.Show("Dirección eliminado exitosamente", "HugoApp - Food Delivery",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-                actualizarControlesAdmin();
-                actualizarTablasAdmin();
+                actualizarControlesCommon();
+                actualizarTablasCommon();
             }
             catch (Exception exception)
             {

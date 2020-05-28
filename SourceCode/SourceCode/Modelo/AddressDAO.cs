@@ -10,7 +10,7 @@ namespace SourceCode.Modelo
 
         public static List<Address> getLista(int idUser)
         {
-            string query = String.Format("Select ad.\"idAddress\", ad.\"address\" from \"Address\" ad  where \"idUser\"={0}",
+            string query = String.Format("SELECT * FROM \"Address\" INNER JOIN \"AppUser\" ON \"AppUser\".\"idUser\" = \"Address\".\"idUser\" where \"AppUser\".\"idUser\" = '{0}';",
                 idUser);
      
 
@@ -45,7 +45,7 @@ namespace SourceCode.Modelo
         public static void removeAddress(int idAddress)
         {
             string act = String.Format(
-                "delete from \"Address\" where \"idAdress\"={0};",
+                "delete from \"Address\" where \"idAddress\"={0};",
                 idAddress);
             
             ConnectionBD.ExecuteNonQuery(act);
