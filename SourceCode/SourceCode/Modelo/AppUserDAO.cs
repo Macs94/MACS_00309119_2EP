@@ -17,11 +17,11 @@ namespace SourceCode.Modelo
             foreach (DataRow row in dt.Rows)
             {
                  AppUser u = new AppUser();
-                 u.admin = Convert.ToBoolean(row[0].ToString());
-                 u.id_User = Convert.ToInt32(row[1].ToString());
-                 u.fullname = row[2].ToString();
-                 u.username = row[3].ToString();
-                 u.password = row[4].ToString();
+                 u.id_User = Convert.ToInt32(row[0].ToString());
+                 u.fullname = row[1].ToString();
+                 u.username = row[2].ToString();
+                 u.password = row[3].ToString();
+                 u.admin = Convert.ToBoolean(row[4].ToString());
                 
 
                 lista.Add(u);
@@ -29,11 +29,11 @@ namespace SourceCode.Modelo
             return lista;
         }
 
-        public static void actualizarContra(string username, string newPassword)
+        public static void actualizarContra(int idUser, string newPassword)
         {
             string act = String.Format(
                 "update AppUser set password='{0}' where idUser='{1}';",
-                newPassword, username);
+                newPassword, idUser);
             
             ConnectionBD.ExecuteNonQuery(act);
         }

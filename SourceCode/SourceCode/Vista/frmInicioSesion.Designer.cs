@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbUsuario = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.btnModUsuario = new System.Windows.Forms.Button();
+            this.btnCambiarPassword = new System.Windows.Forms.Button();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.cmbUsuario, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtPassword, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.btnModUsuario, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.btnCambiarPassword, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnIniciarSesion, 3, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -123,7 +123,8 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.cmbUsuario, 2);
             this.cmbUsuario.FormattingEnabled = true;
-            this.cmbUsuario.Location = new System.Drawing.Point(461, 343);
+            this.cmbUsuario.Location = new System.Drawing.Point(461, 342);
+            this.cmbUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbUsuario.Name = "cmbUsuario";
             this.cmbUsuario.Size = new System.Drawing.Size(422, 33);
             this.cmbUsuario.TabIndex = 3;
@@ -131,27 +132,30 @@
             // txtPassword
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txtPassword, 2);
-            this.txtPassword.Location = new System.Drawing.Point(461, 513);
+            this.txtPassword.Location = new System.Drawing.Point(461, 512);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(422, 31);
             this.txtPassword.TabIndex = 4;
             // 
-            // btnModUsuario
+            // btnCambiarPassword
             // 
-            this.btnModUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnModUsuario.Location = new System.Drawing.Point(477, 615);
-            this.btnModUsuario.Name = "btnModUsuario";
-            this.btnModUsuario.Size = new System.Drawing.Size(184, 49);
-            this.btnModUsuario.TabIndex = 5;
-            this.btnModUsuario.Text = "Modificar Usuario";
-            this.btnModUsuario.UseVisualStyleBackColor = true;
-            this.btnModUsuario.Click += new System.EventHandler(this.btnModUsuario_Click);
+            this.btnCambiarPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCambiarPassword.Location = new System.Drawing.Point(477, 615);
+            this.btnCambiarPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCambiarPassword.Name = "btnCambiarPassword";
+            this.btnCambiarPassword.Size = new System.Drawing.Size(184, 49);
+            this.btnCambiarPassword.TabIndex = 5;
+            this.btnCambiarPassword.Text = "Cambiar Contraseña";
+            this.btnCambiarPassword.UseVisualStyleBackColor = true;
+            this.btnCambiarPassword.Click += new System.EventHandler(this.btnModUsuario_Click);
             // 
             // btnIniciarSesion
             // 
             this.btnIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnIniciarSesion.Location = new System.Drawing.Point(739, 615);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(178, 49);
             this.btnIniciarSesion.TabIndex = 6;
@@ -183,8 +187,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbUsuario;
-        private System.Windows.Forms.Button btnModUsuario;
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnCambiarPassword;
     }
 }

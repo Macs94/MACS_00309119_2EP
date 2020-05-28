@@ -89,9 +89,17 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Controladores\Encriptador.cs" />
+        <Compile Include="Modelo\Address.cs" />
+        <Compile Include="Modelo\AddressDAO.cs" />
+        <Compile Include="Modelo\AppOrder.cs" />
+        <Compile Include="Modelo\AppOrderDAO.cs" />
         <Compile Include="Modelo\AppUser.cs" />
         <Compile Include="Modelo\AppUserDAO.cs" />
+        <Compile Include="Modelo\Business.cs" />
+        <Compile Include="Modelo\BusinessDAO.cs" />
         <Compile Include="Modelo\ConnectionBD.cs" />
+        <Compile Include="Modelo\Product.cs" />
+        <Compile Include="Modelo\ProductDAO.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Vista\frmInicioSesion.cs">
@@ -123,6 +131,9 @@
         </Compile>
         <EmbeddedResource Include="Vista\frmInicioSesion.resx">
           <DependentUpon>frmInicioSesion.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Vista\frmModUsuario.resx">
+          <DependentUpon>frmModUsuario.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Vista\frmPrincipal.resx">
           <DependentUpon>frmPrincipal.cs</DependentUpon>
