@@ -100,7 +100,6 @@ namespace SourceCode.Vista
             this.tabOrder = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.btnEliminarOrder = new System.Windows.Forms.Button();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.dGUserOrders = new System.Windows.Forms.DataGridView();
@@ -115,6 +114,7 @@ namespace SourceCode.Vista
             this.cmbBiD2 = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.cmbOrderiD = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabUser.SuspendLayout();
@@ -233,7 +233,7 @@ namespace SourceCode.Vista
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dGUser);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular,
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox3.Location = new System.Drawing.Point(21, 584);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -249,11 +249,11 @@ namespace SourceCode.Vista
             this.dGUser.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGUser.Location = new System.Drawing.Point(3, 50);
+            this.dGUser.Location = new System.Drawing.Point(3, 26);
             this.dGUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGUser.Name = "dGUser";
             this.dGUser.RowTemplate.Height = 28;
-            this.dGUser.Size = new System.Drawing.Size(1207, 262);
+            this.dGUser.Size = new System.Drawing.Size(1207, 287);
             this.dGUser.TabIndex = 0;
             // 
             // groupBox2
@@ -521,7 +521,7 @@ namespace SourceCode.Vista
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dGAdress);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox6.Location = new System.Drawing.Point(9, 504);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -537,11 +537,11 @@ namespace SourceCode.Vista
             this.dGAdress.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGAdress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGAdress.Location = new System.Drawing.Point(3, 42);
+            this.dGAdress.Location = new System.Drawing.Point(3, 26);
             this.dGAdress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGAdress.Name = "dGAdress";
             this.dGAdress.RowTemplate.Height = 28;
-            this.dGAdress.Size = new System.Drawing.Size(1214, 356);
+            this.dGAdress.Size = new System.Drawing.Size(1215, 373);
             this.dGAdress.TabIndex = 0;
             // 
             // groupBox4
@@ -658,7 +658,7 @@ namespace SourceCode.Vista
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.dGBusiness);
-            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
+            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox9.Location = new System.Drawing.Point(17, 625);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -674,11 +674,11 @@ namespace SourceCode.Vista
             this.dGBusiness.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGBusiness.Location = new System.Drawing.Point(3, 36);
+            this.dGBusiness.Location = new System.Drawing.Point(3, 26);
             this.dGBusiness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGBusiness.Name = "dGBusiness";
             this.dGBusiness.RowTemplate.Height = 28;
-            this.dGBusiness.Size = new System.Drawing.Size(1191, 254);
+            this.dGBusiness.Size = new System.Drawing.Size(1192, 264);
             this.dGBusiness.TabIndex = 0;
             // 
             // groupBox8
@@ -866,7 +866,7 @@ namespace SourceCode.Vista
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.dGProduct);
-            this.groupBox12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
+            this.groupBox12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox12.Location = new System.Drawing.Point(18, 535);
             this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -882,11 +882,11 @@ namespace SourceCode.Vista
             this.dGProduct.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGProduct.Location = new System.Drawing.Point(3, 29);
+            this.dGProduct.Location = new System.Drawing.Point(3, 26);
             this.dGProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGProduct.Name = "dGProduct";
             this.dGProduct.RowTemplate.Height = 28;
-            this.dGProduct.Size = new System.Drawing.Size(1196, 339);
+            this.dGProduct.Size = new System.Drawing.Size(1196, 342);
             this.dGProduct.TabIndex = 0;
             // 
             // groupBox11
@@ -953,6 +953,7 @@ namespace SourceCode.Vista
             this.btnEliminarProduct.TabIndex = 2;
             this.btnEliminarProduct.Text = "Eliminar";
             this.btnEliminarProduct.UseVisualStyleBackColor = true;
+            this.btnEliminarProduct.Click += new System.EventHandler(this.btnEliminarProduct_Click);
             // 
             // label11
             // 
@@ -1062,6 +1063,7 @@ namespace SourceCode.Vista
             this.btnAddProduct.TabIndex = 4;
             this.btnAddProduct.Text = "Agregar";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnClearProduct
             // 
@@ -1073,6 +1075,7 @@ namespace SourceCode.Vista
             this.btnClearProduct.TabIndex = 5;
             this.btnClearProduct.Text = "Limpiar";
             this.btnClearProduct.UseVisualStyleBackColor = true;
+            this.btnClearProduct.Click += new System.EventHandler(this.btnClearProduct_Click);
             // 
             // cmbBiD
             // 
@@ -1124,8 +1127,8 @@ namespace SourceCode.Vista
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.cmbOrderiD);
             this.groupBox14.Controls.Add(this.btnEliminarOrder);
-            this.groupBox14.Controls.Add(this.textBox14);
             this.groupBox14.Controls.Add(this.label15);
             this.groupBox14.Location = new System.Drawing.Point(6, 392);
             this.groupBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1145,14 +1148,7 @@ namespace SourceCode.Vista
             this.btnEliminarOrder.TabIndex = 2;
             this.btnEliminarOrder.Text = "Eliminar";
             this.btnEliminarOrder.UseVisualStyleBackColor = true;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(344, 72);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(176, 31);
-            this.textBox14.TabIndex = 1;
+            this.btnEliminarOrder.Click += new System.EventHandler(this.btnEliminarOrder_Click);
             // 
             // label15
             // 
@@ -1243,6 +1239,7 @@ namespace SourceCode.Vista
             this.btnOrdenar.TabIndex = 6;
             this.btnOrdenar.Text = "Ordenar";
             this.btnOrdenar.UseVisualStyleBackColor = true;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
             // 
             // label14
             // 
@@ -1323,6 +1320,14 @@ namespace SourceCode.Vista
             this.label12.Text = "Product Id:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // cmbOrderiD
+            // 
+            this.cmbOrderiD.FormattingEnabled = true;
+            this.cmbOrderiD.Location = new System.Drawing.Point(334, 73);
+            this.cmbOrderiD.Name = "cmbOrderiD";
+            this.cmbOrderiD.Size = new System.Drawing.Size(111, 33);
+            this.cmbOrderiD.TabIndex = 3;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -1333,7 +1338,6 @@ namespace SourceCode.Vista
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HugoApp-FoodDelivery";
@@ -1373,7 +1377,6 @@ namespace SourceCode.Vista
             ((System.ComponentModel.ISupportInitialize) (this.dGTotalOrders)).EndInit();
             this.tabOrder.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize) (this.dGUserOrders)).EndInit();
             this.groupBox13.ResumeLayout(false);
@@ -1453,7 +1456,6 @@ namespace SourceCode.Vista
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnOrdenar;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Button btnEliminarOrder;
         private System.Windows.Forms.DataGridView dGUserOrders;
         private System.Windows.Forms.DataGridView dGTotalOrders;
@@ -1468,5 +1470,6 @@ namespace SourceCode.Vista
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbBiD2;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cmbOrderiD;
     }
 }

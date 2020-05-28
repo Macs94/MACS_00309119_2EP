@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using SourceCode.Modelo;
@@ -119,6 +120,11 @@ namespace SourceCode.Vista
             cmbBusinessiD.DisplayMember = "idBusiness";
             cmbBusinessiD.ValueMember = "idBusiness";
             cmbBusinessiD.DataSource = listaB;
+            
+            cmbBiD.DataSource = null;
+            cmbBiD.DisplayMember = "idBusiness";
+            cmbBiD.ValueMember = "idBusiness";
+            cmbBiD.DataSource = listaB;
 
             List<Product> listaP = ProductDAO.getLista();
             cmbProductId.DataSource = null;
@@ -154,7 +160,15 @@ namespace SourceCode.Vista
             cmbPiD.ValueMember = "idProduct";
             cmbPiD.DataSource = listaP;
             
-            
+            List<AppOrder> listaO = AppOrderDAO.getListaUser(user.id_User);
+
+            cmbOrderiD.DataSource = null;
+            cmbOrderiD.DisplayMember = "idOrder";
+            cmbOrderiD.ValueMember = "idOrder";
+            cmbOrderiD.DataSource = listaO;
+
+
+
         }
         private void actualizarTablasAdmin()
         {
@@ -245,20 +259,17 @@ namespace SourceCode.Vista
             {
                 BusinessDAO.addBusiness(b);
 
-                MessageBox.Show($"Negocio agregado exitosamente.)", 
+                MessageBox.Show($"Negocio agregado exitosamente", 
                     "HugoApp - Food Delivery",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                
                 btnClearBusiness_Click(sender, e);
-
-                // Actualizar la vista, los ComboBox de la primer pestana
                 actualizarControlesAdmin();
                 actualizarTablasAdmin();
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Error: " + exception.Message, "Error dialog",
+                MessageBox.Show("Error: " + exception.Message, "Error dialog", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -271,7 +282,114 @@ namespace SourceCode.Vista
 
         private void btnEliminarBusiness_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            try
+            {
+               
+                BusinessDAO.removeBusiness((int) cmbBusinessiD.SelectedValue);
+                MessageBox.Show("Negocio eliminado exitosamente", "HugoApp - Food Delivery",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                actualizarControlesAdmin();
+                actualizarTablasAdmin();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, "Error dialog",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            
+            Product p = new Product();
+            p.idBusiness = (int) cmbBiD.SelectedValue;
+            p.name = textBox10.Text;
+            
+            try
+            {
+                ProductDAO.addProduct(p);
+
+                MessageBox.Show($"Producto agregado exitosamente.", 
+                    "HugoApp - Food Delivery",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnClearProduct_Click(sender, e);
+                actualizarControlesAdmin();
+                actualizarTablasAdmin();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, "Error dialog", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnClearProduct_Click(object sender, EventArgs e)
+        {
+            textBox10.Clear();
+        }
+
+        private void btnEliminarProduct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                ProductDAO.removeProduct((int) cmbProductId.SelectedValue);
+                MessageBox.Show("Producto eliminado exitosamente", "HugoApp - Food Delivery",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                actualizarControlesAdmin();
+                actualizarTablasAdmin();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, "Error dialog",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+                   
+            AppOrder o = new AppOrder();
+            o.createDate = dateTimePicker1.Value;
+            o.idAddress = (int)cmbAiD.SelectedValue;
+            o.idProduct = (int) cmbPiD.SelectedValue;
+            
+            try
+            {
+                AppOrderDAO.addOrder(o);
+
+                MessageBox.Show($"Orden agregada exitosamente.", 
+                    "HugoApp - Food Delivery",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnClearProduct_Click(sender, e);
+                actualizarControlesCommon();
+                actualizarTablasCommon();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, "Error dialog", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEliminarOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                AppOrderDAO.removeOrder((int) cmbOrderiD.SelectedValue);
+                MessageBox.Show("Producto eliminado exitosamente", "HugoApp - Food Delivery",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                actualizarControlesAdmin();
+                actualizarTablasAdmin();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error: " + exception.Message, "Error dialog",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
