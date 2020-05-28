@@ -6,10 +6,9 @@ namespace SourceCode.Modelo
 {
     public class ProductDAO
     {
-        public static List<Product> getLista(int idBusiness)
+        public static List<Product> getLista()
         {
-            string query = String.Format("Select p.\"idProduct\", p.\"name\" from \"Product\" where \"idBusiness\"={0}"
-                ,idBusiness);
+            string query = "select * from  \"Product\" order by \"idBusiness\", \"idProduct\"";
 
             DataTable dt = ConnectionBD.ExecuteQuery(query);
 
@@ -39,7 +38,7 @@ namespace SourceCode.Modelo
             ConnectionBD.ExecuteNonQuery(act);
         }
         
-        public static void eliminarProducto(int idProduct)
+        public static void removeProduct(int idProduct)
         {
             string act = String.Format(
                 "delete from \"Product\" where \"idProduct\"={0};",

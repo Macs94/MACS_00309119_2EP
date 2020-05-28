@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace SourceCode
+namespace SourceCode.Vista
 {
     partial class frmPrincipal
     {
@@ -53,6 +53,7 @@ namespace SourceCode
             this.btnClearUser = new System.Windows.Forms.Button();
             this.tabAddress = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cmbAddressId = new System.Windows.Forms.ComboBox();
             this.btnEliminarAddress = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -60,13 +61,14 @@ namespace SourceCode
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.btnClearAddress = new System.Windows.Forms.Button();
             this.btnAddAddress = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.tabBusiness = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dGBusiness = new System.Windows.Forms.DataGridView();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.cmbBusinessiD = new System.Windows.Forms.ComboBox();
             this.btnEliminarBusiness = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -82,6 +84,7 @@ namespace SourceCode
             this.dGProduct = new System.Windows.Forms.DataGridView();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbProductId = new System.Windows.Forms.ComboBox();
             this.btnEliminarProduct = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -91,6 +94,7 @@ namespace SourceCode
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnClearProduct = new System.Windows.Forms.Button();
+            this.cmbBiD = new System.Windows.Forms.ComboBox();
             this.tabOrderData = new System.Windows.Forms.TabPage();
             this.dGTotalOrders = new System.Windows.Forms.DataGridView();
             this.tabOrder = new System.Windows.Forms.TabPage();
@@ -102,17 +106,15 @@ namespace SourceCode
             this.dGUserOrders = new System.Windows.Forms.DataGridView();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.btnOrdenar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnOrdenar = new System.Windows.Forms.Button();
-            this.cmbAddressId = new System.Windows.Forms.ComboBox();
-            this.cmbBusinessiD = new System.Windows.Forms.ComboBox();
-            this.cmbBiD = new System.Windows.Forms.ComboBox();
-            this.cmbProductId = new System.Windows.Forms.ComboBox();
-            this.cmbPiD = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.cmbAiD = new System.Windows.Forms.ComboBox();
+            this.cmbPiD = new System.Windows.Forms.ComboBox();
+            this.cmbBiD2 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabUser.SuspendLayout();
@@ -152,6 +154,7 @@ namespace SourceCode
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -169,7 +172,7 @@ namespace SourceCode
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.5F));
             this.tableLayoutPanel1.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 95.5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1253, 999);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1244, 925);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // button1
@@ -177,7 +180,7 @@ namespace SourceCode
             this.button1.Location = new System.Drawing.Point(3, 2);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(286, 38);
+            this.button1.Size = new System.Drawing.Size(286, 36);
             this.button1.TabIndex = 0;
             this.button1.Text = "Regresar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -187,7 +190,9 @@ namespace SourceCode
             // lblSesión
             // 
             this.lblSesión.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblSesión.Location = new System.Drawing.Point(659, 3);
+            this.lblSesión.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.lblSesión.Location = new System.Drawing.Point(650, 1);
             this.lblSesión.Name = "lblSesión";
             this.lblSesión.Size = new System.Drawing.Size(591, 38);
             this.lblSesión.TabIndex = 1;
@@ -204,15 +209,16 @@ namespace SourceCode
             this.tabControl1.Controls.Add(this.tabOrderData);
             this.tabControl1.Controls.Add(this.tabOrder);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 46);
+            this.tabControl1.Location = new System.Drawing.Point(3, 43);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1247, 951);
+            this.tabControl1.Size = new System.Drawing.Size(1238, 880);
             this.tabControl1.TabIndex = 2;
             // 
             // tabUser
             // 
+            this.tabUser.BackColor = System.Drawing.Color.Thistle;
             this.tabUser.Controls.Add(this.groupBox3);
             this.tabUser.Controls.Add(this.groupBox2);
             this.tabUser.Controls.Add(this.groupBox1);
@@ -220,10 +226,9 @@ namespace SourceCode
             this.tabUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabUser.Name = "tabUser";
             this.tabUser.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabUser.Size = new System.Drawing.Size(1239, 913);
+            this.tabUser.Size = new System.Drawing.Size(1230, 842);
             this.tabUser.TabIndex = 5;
             this.tabUser.Text = "Gestión de Usuarios";
-            this.tabUser.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -244,11 +249,11 @@ namespace SourceCode
             this.dGUser.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGUser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGUser.Location = new System.Drawing.Point(3, 40);
+            this.dGUser.Location = new System.Drawing.Point(3, 50);
             this.dGUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGUser.Name = "dGUser";
             this.dGUser.RowTemplate.Height = 28;
-            this.dGUser.Size = new System.Drawing.Size(1207, 273);
+            this.dGUser.Size = new System.Drawing.Size(1207, 262);
             this.dGUser.TabIndex = 0;
             // 
             // groupBox2
@@ -282,10 +287,10 @@ namespace SourceCode
             // 
             this.btnEliminarUser.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnEliminarUser.Location = new System.Drawing.Point(791, 46);
+            this.btnEliminarUser.Location = new System.Drawing.Point(791, 34);
             this.btnEliminarUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarUser.Name = "btnEliminarUser";
-            this.btnEliminarUser.Size = new System.Drawing.Size(207, 42);
+            this.btnEliminarUser.Size = new System.Drawing.Size(207, 65);
             this.btnEliminarUser.TabIndex = 2;
             this.btnEliminarUser.Text = "Eliminar";
             this.btnEliminarUser.UseVisualStyleBackColor = true;
@@ -339,7 +344,7 @@ namespace SourceCode
             this.tableLayoutPanel2.Controls.Add(this.btnAddUser, 2, 5);
             this.tableLayoutPanel2.Controls.Add(this.btnClearUser, 5, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 40);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 50);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
@@ -355,7 +360,7 @@ namespace SourceCode
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1208, 420);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1208, 410);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -364,7 +369,7 @@ namespace SourceCode
             this.tableLayoutPanel2.SetColumnSpan(this.label1, 2);
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label1.Location = new System.Drawing.Point(127, 73);
+            this.label1.Location = new System.Drawing.Point(127, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(272, 60);
             this.label1.TabIndex = 0;
@@ -377,7 +382,7 @@ namespace SourceCode
             this.tableLayoutPanel2.SetColumnSpan(this.label2, 2);
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label2.Location = new System.Drawing.Point(127, 211);
+            this.label2.Location = new System.Drawing.Point(127, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(272, 60);
             this.label2.TabIndex = 1;
@@ -389,10 +394,10 @@ namespace SourceCode
             this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.checkBox1.Location = new System.Drawing.Point(1008, 140);
+            this.checkBox1.Location = new System.Drawing.Point(1008, 138);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(197, 65);
+            this.checkBox1.Size = new System.Drawing.Size(197, 64);
             this.checkBox1.TabIndex = 2;
             this.checkBox1.Text = "Administrador";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -403,7 +408,7 @@ namespace SourceCode
             this.tableLayoutPanel2.SetColumnSpan(this.textBox1, 2);
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox1.Location = new System.Drawing.Point(422, 86);
+            this.textBox1.Location = new System.Drawing.Point(422, 85);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(362, 34);
@@ -415,7 +420,7 @@ namespace SourceCode
             this.tableLayoutPanel2.SetColumnSpan(this.textBox2, 2);
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox2.Location = new System.Drawing.Point(422, 224);
+            this.textBox2.Location = new System.Drawing.Point(422, 221);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(362, 34);
@@ -426,10 +431,10 @@ namespace SourceCode
             this.btnAddUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnAddUser.Location = new System.Drawing.Point(405, 347);
+            this.btnAddUser.Location = new System.Drawing.Point(405, 342);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(195, 71);
+            this.btnAddUser.Size = new System.Drawing.Size(195, 66);
             this.btnAddUser.TabIndex = 5;
             this.btnAddUser.Text = "Agregar";
             this.btnAddUser.UseVisualStyleBackColor = true;
@@ -440,10 +445,10 @@ namespace SourceCode
             this.btnClearUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClearUser.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnClearUser.Location = new System.Drawing.Point(1008, 347);
+            this.btnClearUser.Location = new System.Drawing.Point(1008, 342);
             this.btnClearUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearUser.Name = "btnClearUser";
-            this.btnClearUser.Size = new System.Drawing.Size(197, 71);
+            this.btnClearUser.Size = new System.Drawing.Size(197, 66);
             this.btnClearUser.TabIndex = 6;
             this.btnClearUser.Text = "Limpiar";
             this.btnClearUser.UseVisualStyleBackColor = true;
@@ -451,6 +456,7 @@ namespace SourceCode
             // 
             // tabAddress
             // 
+            this.tabAddress.BackColor = System.Drawing.Color.Thistle;
             this.tabAddress.Controls.Add(this.groupBox5);
             this.tabAddress.Controls.Add(this.groupBox6);
             this.tabAddress.Controls.Add(this.groupBox4);
@@ -458,10 +464,9 @@ namespace SourceCode
             this.tabAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAddress.Name = "tabAddress";
             this.tabAddress.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAddress.Size = new System.Drawing.Size(1239, 913);
+            this.tabAddress.Size = new System.Drawing.Size(1230, 842);
             this.tabAddress.TabIndex = 6;
             this.tabAddress.Text = "Gestión de direcciones";
-            this.tabAddress.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -479,15 +484,27 @@ namespace SourceCode
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Eliminar Dirección";
             // 
+            // cmbAddressId
+            // 
+            this.cmbAddressId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.cmbAddressId.FormattingEnabled = true;
+            this.cmbAddressId.Location = new System.Drawing.Point(293, 88);
+            this.cmbAddressId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAddressId.Name = "cmbAddressId";
+            this.cmbAddressId.Size = new System.Drawing.Size(148, 36);
+            this.cmbAddressId.TabIndex = 3;
+            // 
             // btnEliminarAddress
             // 
             this.btnEliminarAddress.Location = new System.Drawing.Point(704, 78);
             this.btnEliminarAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarAddress.Name = "btnEliminarAddress";
-            this.btnEliminarAddress.Size = new System.Drawing.Size(183, 50);
+            this.btnEliminarAddress.Size = new System.Drawing.Size(183, 54);
             this.btnEliminarAddress.TabIndex = 2;
             this.btnEliminarAddress.Text = "Eliminar";
             this.btnEliminarAddress.UseVisualStyleBackColor = true;
+            this.btnEliminarAddress.Click += new System.EventHandler(this.btnEliminarAddress_Click);
             // 
             // label5
             // 
@@ -520,11 +537,11 @@ namespace SourceCode
             this.dGAdress.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGAdress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGAdress.Location = new System.Drawing.Point(3, 34);
+            this.dGAdress.Location = new System.Drawing.Point(3, 42);
             this.dGAdress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGAdress.Name = "dGAdress";
             this.dGAdress.RowTemplate.Height = 28;
-            this.dGAdress.Size = new System.Drawing.Size(1215, 365);
+            this.dGAdress.Size = new System.Drawing.Size(1214, 356);
             this.dGAdress.TabIndex = 0;
             // 
             // groupBox4
@@ -553,11 +570,11 @@ namespace SourceCode
             this.tableLayoutPanel3.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnClearAddress, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnAddAddress, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBox4, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 42);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -569,7 +586,7 @@ namespace SourceCode
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1221, 228);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1220, 219);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label4
@@ -577,12 +594,40 @@ namespace SourceCode
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label4.Location = new System.Drawing.Point(104, 30);
+            this.label4.Location = new System.Drawing.Point(104, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(198, 54);
             this.label4.TabIndex = 0;
             this.label4.Text = "Dirección:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnClearAddress
+            // 
+            this.btnClearAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnClearAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnClearAddress.Location = new System.Drawing.Point(954, 140);
+            this.btnClearAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClearAddress.Name = "btnClearAddress";
+            this.btnClearAddress.Size = new System.Drawing.Size(226, 48);
+            this.btnClearAddress.TabIndex = 3;
+            this.btnClearAddress.Text = "Limpiar";
+            this.btnClearAddress.UseVisualStyleBackColor = true;
+            this.btnClearAddress.Click += new System.EventHandler(this.btnClearAddress_Click);
+            // 
+            // btnAddAddress
+            // 
+            this.btnAddAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnAddAddress.Location = new System.Drawing.Point(344, 140);
+            this.btnAddAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddAddress.Name = "btnAddAddress";
+            this.btnAddAddress.Size = new System.Drawing.Size(226, 48);
+            this.btnAddAddress.TabIndex = 2;
+            this.btnAddAddress.Text = "Agregar";
+            this.btnAddAddress.UseVisualStyleBackColor = true;
+            this.btnAddAddress.Click += new System.EventHandler(this.btnAddAddress_Click);
             // 
             // textBox4
             // 
@@ -590,40 +635,15 @@ namespace SourceCode
             this.tableLayoutPanel3.SetColumnSpan(this.textBox4, 2);
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox4.Location = new System.Drawing.Point(333, 40);
+            this.textBox4.Location = new System.Drawing.Point(326, 37);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(554, 34);
-            this.textBox4.TabIndex = 1;
-            // 
-            // btnClearAddress
-            // 
-            this.btnClearAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClearAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnClearAddress.Location = new System.Drawing.Point(955, 147);
-            this.btnClearAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearAddress.Name = "btnClearAddress";
-            this.btnClearAddress.Size = new System.Drawing.Size(226, 48);
-            this.btnClearAddress.TabIndex = 3;
-            this.btnClearAddress.Text = "Limpiar";
-            this.btnClearAddress.UseVisualStyleBackColor = true;
-            // 
-            // btnAddAddress
-            // 
-            this.btnAddAddress.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnAddAddress.Location = new System.Drawing.Point(344, 147);
-            this.btnAddAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAddAddress.Name = "btnAddAddress";
-            this.btnAddAddress.Size = new System.Drawing.Size(226, 48);
-            this.btnAddAddress.TabIndex = 2;
-            this.btnAddAddress.Text = "Agregar";
-            this.btnAddAddress.UseVisualStyleBackColor = true;
+            this.textBox4.Size = new System.Drawing.Size(568, 34);
+            this.textBox4.TabIndex = 4;
             // 
             // tabBusiness
             // 
+            this.tabBusiness.BackColor = System.Drawing.Color.Thistle;
             this.tabBusiness.Controls.Add(this.groupBox9);
             this.tabBusiness.Controls.Add(this.groupBox8);
             this.tabBusiness.Controls.Add(this.groupBox7);
@@ -631,15 +651,14 @@ namespace SourceCode
             this.tabBusiness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabBusiness.Name = "tabBusiness";
             this.tabBusiness.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabBusiness.Size = new System.Drawing.Size(1239, 913);
+            this.tabBusiness.Size = new System.Drawing.Size(1230, 842);
             this.tabBusiness.TabIndex = 7;
             this.tabBusiness.Text = "Gestion de negocios";
-            this.tabBusiness.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.dGBusiness);
-            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular,
+            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox9.Location = new System.Drawing.Point(17, 625);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -655,11 +674,11 @@ namespace SourceCode
             this.dGBusiness.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGBusiness.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGBusiness.Location = new System.Drawing.Point(3, 40);
+            this.dGBusiness.Location = new System.Drawing.Point(3, 36);
             this.dGBusiness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGBusiness.Name = "dGBusiness";
             this.dGBusiness.RowTemplate.Height = 28;
-            this.dGBusiness.Size = new System.Drawing.Size(1192, 250);
+            this.dGBusiness.Size = new System.Drawing.Size(1191, 254);
             this.dGBusiness.TabIndex = 0;
             // 
             // groupBox8
@@ -678,15 +697,27 @@ namespace SourceCode
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Eliminar Negocio";
             // 
+            // cmbBusinessiD
+            // 
+            this.cmbBusinessiD.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.cmbBusinessiD.FormattingEnabled = true;
+            this.cmbBusinessiD.Location = new System.Drawing.Point(320, 85);
+            this.cmbBusinessiD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBusinessiD.Name = "cmbBusinessiD";
+            this.cmbBusinessiD.Size = new System.Drawing.Size(100, 36);
+            this.cmbBusinessiD.TabIndex = 3;
+            // 
             // btnEliminarBusiness
             // 
-            this.btnEliminarBusiness.Location = new System.Drawing.Point(712, 82);
+            this.btnEliminarBusiness.Location = new System.Drawing.Point(712, 69);
             this.btnEliminarBusiness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarBusiness.Name = "btnEliminarBusiness";
-            this.btnEliminarBusiness.Size = new System.Drawing.Size(308, 39);
+            this.btnEliminarBusiness.Size = new System.Drawing.Size(308, 60);
             this.btnEliminarBusiness.TabIndex = 2;
             this.btnEliminarBusiness.Text = "Eliminar";
             this.btnEliminarBusiness.UseVisualStyleBackColor = true;
+            this.btnEliminarBusiness.Click += new System.EventHandler(this.btnEliminarBusiness_Click);
             // 
             // label8
             // 
@@ -731,7 +762,7 @@ namespace SourceCode
             this.tableLayoutPanel4.Controls.Add(this.btnClearBusiness, 3, 2);
             this.tableLayoutPanel4.Controls.Add(this.button2, 1, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 40);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 50);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
@@ -741,7 +772,7 @@ namespace SourceCode
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel4.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1197, 376);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1197, 365);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // label7
@@ -749,7 +780,7 @@ namespace SourceCode
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label7.Location = new System.Drawing.Point(148, 169);
+            this.label7.Location = new System.Drawing.Point(148, 163);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 36);
             this.label7.TabIndex = 1;
@@ -760,7 +791,7 @@ namespace SourceCode
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label6.Location = new System.Drawing.Point(148, 44);
+            this.label6.Location = new System.Drawing.Point(148, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 36);
             this.label6.TabIndex = 0;
@@ -772,7 +803,7 @@ namespace SourceCode
             this.tableLayoutPanel4.SetColumnSpan(this.textBox3, 2);
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox3.Location = new System.Drawing.Point(326, 45);
+            this.textBox3.Location = new System.Drawing.Point(326, 43);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(543, 34);
@@ -784,7 +815,7 @@ namespace SourceCode
             this.tableLayoutPanel4.SetColumnSpan(this.textBox5, 2);
             this.textBox5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox5.Location = new System.Drawing.Point(327, 170);
+            this.textBox5.Location = new System.Drawing.Point(327, 164);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(542, 34);
@@ -795,29 +826,32 @@ namespace SourceCode
             this.btnClearBusiness.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnClearBusiness.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnClearBusiness.Location = new System.Drawing.Point(941, 287);
+            this.btnClearBusiness.Location = new System.Drawing.Point(941, 268);
             this.btnClearBusiness.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearBusiness.Name = "btnClearBusiness";
-            this.btnClearBusiness.Size = new System.Drawing.Size(212, 52);
+            this.btnClearBusiness.Size = new System.Drawing.Size(212, 71);
             this.btnClearBusiness.TabIndex = 5;
             this.btnClearBusiness.Text = "Limpiar";
             this.btnClearBusiness.UseVisualStyleBackColor = true;
+            this.btnClearBusiness.Click += new System.EventHandler(this.btnClearBusiness_Click);
             // 
             // button2
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.button2.Location = new System.Drawing.Point(331, 276);
+            this.button2.Location = new System.Drawing.Point(331, 258);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 74);
+            this.button2.Size = new System.Drawing.Size(234, 90);
             this.button2.TabIndex = 4;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tabProduct
             // 
+            this.tabProduct.BackColor = System.Drawing.Color.Thistle;
             this.tabProduct.Controls.Add(this.groupBox12);
             this.tabProduct.Controls.Add(this.groupBox11);
             this.tabProduct.Controls.Add(this.groupBox10);
@@ -825,15 +859,14 @@ namespace SourceCode
             this.tabProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabProduct.Name = "tabProduct";
             this.tabProduct.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabProduct.Size = new System.Drawing.Size(1239, 913);
+            this.tabProduct.Size = new System.Drawing.Size(1230, 842);
             this.tabProduct.TabIndex = 8;
             this.tabProduct.Text = "Gestión de productos ";
-            this.tabProduct.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.dGProduct);
-            this.groupBox12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular,
+            this.groupBox12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.groupBox12.Location = new System.Drawing.Point(18, 535);
             this.groupBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -849,11 +882,11 @@ namespace SourceCode
             this.dGProduct.ColumnHeadersHeightSizeMode =
                 System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGProduct.Location = new System.Drawing.Point(3, 34);
+            this.dGProduct.Location = new System.Drawing.Point(3, 29);
             this.dGProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGProduct.Name = "dGProduct";
             this.dGProduct.RowTemplate.Height = 28;
-            this.dGProduct.Size = new System.Drawing.Size(1196, 334);
+            this.dGProduct.Size = new System.Drawing.Size(1196, 339);
             this.dGProduct.TabIndex = 0;
             // 
             // groupBox11
@@ -885,7 +918,7 @@ namespace SourceCode
             this.tableLayoutPanel6.Controls.Add(this.btnEliminarProduct, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 42);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
@@ -897,13 +930,23 @@ namespace SourceCode
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel6.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1212, 200);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1211, 191);
             this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // cmbProductId
+            // 
+            this.cmbProductId.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbProductId.FormattingEnabled = true;
+            this.cmbProductId.Location = new System.Drawing.Point(561, 11);
+            this.cmbProductId.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbProductId.Name = "cmbProductId";
+            this.cmbProductId.Size = new System.Drawing.Size(87, 40);
+            this.cmbProductId.TabIndex = 4;
             // 
             // btnEliminarProduct
             // 
             this.btnEliminarProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEliminarProduct.Location = new System.Drawing.Point(519, 136);
+            this.btnEliminarProduct.Location = new System.Drawing.Point(517, 129);
             this.btnEliminarProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarProduct.Name = "btnEliminarProduct";
             this.btnEliminarProduct.Size = new System.Drawing.Size(174, 59);
@@ -916,7 +959,7 @@ namespace SourceCode
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label11.Location = new System.Drawing.Point(80, 14);
+            this.label11.Location = new System.Drawing.Point(80, 12);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(243, 38);
             this.label11.TabIndex = 0;
@@ -957,7 +1000,7 @@ namespace SourceCode
             this.tableLayoutPanel5.Controls.Add(this.btnClearProduct, 2, 2);
             this.tableLayoutPanel5.Controls.Add(this.cmbBiD, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 34);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 42);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
@@ -971,7 +1014,7 @@ namespace SourceCode
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(
                 new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1212, 234);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1211, 225);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // label9
@@ -979,7 +1022,7 @@ namespace SourceCode
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label9.Location = new System.Drawing.Point(80, 13);
+            this.label9.Location = new System.Drawing.Point(80, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(243, 51);
             this.label9.TabIndex = 0;
@@ -991,7 +1034,7 @@ namespace SourceCode
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.label10.Location = new System.Drawing.Point(93, 91);
+            this.label10.Location = new System.Drawing.Point(93, 87);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(217, 51);
             this.label10.TabIndex = 1;
@@ -1003,7 +1046,7 @@ namespace SourceCode
             this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.textBox10.Location = new System.Drawing.Point(457, 100);
+            this.textBox10.Location = new System.Drawing.Point(455, 95);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(298, 34);
@@ -1012,10 +1055,10 @@ namespace SourceCode
             // btnAddProduct
             // 
             this.btnAddProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAddProduct.Location = new System.Drawing.Point(493, 174);
+            this.btnAddProduct.Location = new System.Drawing.Point(491, 158);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(226, 41);
+            this.btnAddProduct.Size = new System.Drawing.Size(226, 58);
             this.btnAddProduct.TabIndex = 4;
             this.btnAddProduct.Text = "Agregar";
             this.btnAddProduct.UseVisualStyleBackColor = true;
@@ -1023,13 +1066,23 @@ namespace SourceCode
             // btnClearProduct
             // 
             this.btnClearProduct.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnClearProduct.Location = new System.Drawing.Point(923, 173);
+            this.btnClearProduct.Location = new System.Drawing.Point(921, 158);
             this.btnClearProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClearProduct.Name = "btnClearProduct";
-            this.btnClearProduct.Size = new System.Drawing.Size(174, 44);
+            this.btnClearProduct.Size = new System.Drawing.Size(174, 58);
             this.btnClearProduct.TabIndex = 5;
             this.btnClearProduct.Text = "Limpiar";
             this.btnClearProduct.UseVisualStyleBackColor = true;
+            // 
+            // cmbBiD
+            // 
+            this.cmbBiD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbBiD.FormattingEnabled = true;
+            this.cmbBiD.Location = new System.Drawing.Point(556, 17);
+            this.cmbBiD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBiD.Name = "cmbBiD";
+            this.cmbBiD.Size = new System.Drawing.Size(96, 40);
+            this.cmbBiD.TabIndex = 3;
             // 
             // tabOrderData
             // 
@@ -1038,7 +1091,7 @@ namespace SourceCode
             this.tabOrderData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabOrderData.Name = "tabOrderData";
             this.tabOrderData.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabOrderData.Size = new System.Drawing.Size(1239, 913);
+            this.tabOrderData.Size = new System.Drawing.Size(1230, 842);
             this.tabOrderData.TabIndex = 9;
             this.tabOrderData.Text = "Historial de ordenes";
             this.tabOrderData.UseVisualStyleBackColor = true;
@@ -1052,11 +1105,12 @@ namespace SourceCode
             this.dGTotalOrders.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dGTotalOrders.Name = "dGTotalOrders";
             this.dGTotalOrders.RowTemplate.Height = 28;
-            this.dGTotalOrders.Size = new System.Drawing.Size(1233, 909);
+            this.dGTotalOrders.Size = new System.Drawing.Size(1224, 838);
             this.dGTotalOrders.TabIndex = 0;
             // 
             // tabOrder
             // 
+            this.tabOrder.BackColor = System.Drawing.Color.Thistle;
             this.tabOrder.Controls.Add(this.groupBox14);
             this.tabOrder.Controls.Add(this.groupBox15);
             this.tabOrder.Controls.Add(this.groupBox13);
@@ -1064,10 +1118,9 @@ namespace SourceCode
             this.tabOrder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabOrder.Name = "tabOrder";
             this.tabOrder.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabOrder.Size = new System.Drawing.Size(1239, 913);
+            this.tabOrder.Size = new System.Drawing.Size(1230, 842);
             this.tabOrder.TabIndex = 10;
             this.tabOrder.Text = "Ordenar";
-            this.tabOrder.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
@@ -1155,13 +1208,15 @@ namespace SourceCode
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel7.ColumnStyles.Add(
                 new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label13, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label14, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.dateTimePicker1, 1, 2);
-            this.tableLayoutPanel7.Controls.Add(this.btnOrdenar, 1, 3);
-            this.tableLayoutPanel7.Controls.Add(this.cmbPiD, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.cmbAiD, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.btnOrdenar, 2, 3);
+            this.tableLayoutPanel7.Controls.Add(this.label14, 0, 3);
+            this.tableLayoutPanel7.Controls.Add(this.dateTimePicker1, 1, 3);
+            this.tableLayoutPanel7.Controls.Add(this.label13, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.cmbAiD, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.cmbPiD, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.cmbBiD2, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label16, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 26);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1178,30 +1233,21 @@ namespace SourceCode
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1221, 352);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
-            // label12
+            // btnOrdenar
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label12.Location = new System.Drawing.Point(166, 23);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(238, 42);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Product Id:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label13.Location = new System.Drawing.Point(166, 108);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(238, 48);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Address Id:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOrdenar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOrdenar.Location = new System.Drawing.Point(916, 273);
+            this.btnOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(202, 70);
+            this.btnOrdenar.TabIndex = 6;
+            this.btnOrdenar.Text = "Ordenar";
+            this.btnOrdenar.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label14.Location = new System.Drawing.Point(166, 196);
+            this.label14.Location = new System.Drawing.Point(166, 284);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(238, 48);
             this.label14.TabIndex = 2;
@@ -1211,84 +1257,79 @@ namespace SourceCode
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Location = new System.Drawing.Point(445, 204);
+            this.dateTimePicker1.Location = new System.Drawing.Point(445, 292);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(331, 31);
             this.dateTimePicker1.TabIndex = 3;
             // 
-            // btnOrdenar
+            // label13
             // 
-            this.btnOrdenar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOrdenar.Location = new System.Drawing.Point(509, 273);
-            this.btnOrdenar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Size = new System.Drawing.Size(202, 70);
-            this.btnOrdenar.TabIndex = 6;
-            this.btnOrdenar.Text = "Ordenar";
-            this.btnOrdenar.UseVisualStyleBackColor = true;
-            // 
-            // cmbAddressId
-            // 
-            this.cmbAddressId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.cmbAddressId.FormattingEnabled = true;
-            this.cmbAddressId.Location = new System.Drawing.Point(293, 87);
-            this.cmbAddressId.Name = "cmbAddressId";
-            this.cmbAddressId.Size = new System.Drawing.Size(149, 36);
-            this.cmbAddressId.TabIndex = 3;
-            // 
-            // cmbBusinessiD
-            // 
-            this.cmbBusinessiD.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.cmbBusinessiD.FormattingEnabled = true;
-            this.cmbBusinessiD.Location = new System.Drawing.Point(320, 85);
-            this.cmbBusinessiD.Name = "cmbBusinessiD";
-            this.cmbBusinessiD.Size = new System.Drawing.Size(100, 36);
-            this.cmbBusinessiD.TabIndex = 3;
-            // 
-            // cmbBiD
-            // 
-            this.cmbBiD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbBiD.FormattingEnabled = true;
-            this.cmbBiD.Location = new System.Drawing.Point(558, 19);
-            this.cmbBiD.Name = "cmbBiD";
-            this.cmbBiD.Size = new System.Drawing.Size(96, 40);
-            this.cmbBiD.TabIndex = 3;
-            // 
-            // cmbProductId
-            // 
-            this.cmbProductId.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbProductId.FormattingEnabled = true;
-            this.cmbProductId.Location = new System.Drawing.Point(562, 13);
-            this.cmbProductId.Name = "cmbProductId";
-            this.cmbProductId.Size = new System.Drawing.Size(87, 40);
-            this.cmbProductId.TabIndex = 4;
-            // 
-            // cmbPiD
-            // 
-            this.cmbPiD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cmbPiD.FormattingEnabled = true;
-            this.cmbPiD.Location = new System.Drawing.Point(552, 23);
-            this.cmbPiD.Name = "cmbPiD";
-            this.cmbPiD.Size = new System.Drawing.Size(116, 33);
-            this.cmbPiD.TabIndex = 7;
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label13.Location = new System.Drawing.Point(166, 196);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(238, 48);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Address Id:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbAiD
             // 
             this.cmbAiD.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbAiD.FormattingEnabled = true;
-            this.cmbAiD.Location = new System.Drawing.Point(552, 115);
+            this.cmbAiD.Location = new System.Drawing.Point(552, 203);
+            this.cmbAiD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbAiD.Name = "cmbAiD";
             this.cmbAiD.Size = new System.Drawing.Size(116, 33);
             this.cmbAiD.TabIndex = 8;
+            // 
+            // cmbPiD
+            // 
+            this.cmbPiD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbPiD.FormattingEnabled = true;
+            this.cmbPiD.Location = new System.Drawing.Point(552, 115);
+            this.cmbPiD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbPiD.Name = "cmbPiD";
+            this.cmbPiD.Size = new System.Drawing.Size(116, 33);
+            this.cmbPiD.TabIndex = 7;
+            // 
+            // cmbBiD2
+            // 
+            this.cmbBiD2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmbBiD2.FormattingEnabled = true;
+            this.cmbBiD2.Location = new System.Drawing.Point(552, 27);
+            this.cmbBiD2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbBiD2.Name = "cmbBiD2";
+            this.cmbBiD2.Size = new System.Drawing.Size(116, 33);
+            this.cmbBiD2.TabIndex = 10;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label16.Location = new System.Drawing.Point(200, 24);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(204, 39);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Business Id:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label12.Location = new System.Drawing.Point(166, 111);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(238, 42);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Product Id:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1253, 999);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.DarkOrchid;
+            this.ClientSize = new System.Drawing.Size(1244, 925);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1338,6 +1379,7 @@ namespace SourceCode
             this.groupBox13.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
         #endregion
@@ -1370,7 +1412,6 @@ namespace SourceCode
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button btnAddAddress;
         private System.Windows.Forms.Button btnClearAddress;
         private System.Windows.Forms.Label label5;
@@ -1424,5 +1465,8 @@ namespace SourceCode
         private System.Windows.Forms.ComboBox cmbProductId;
         private System.Windows.Forms.ComboBox cmbPiD;
         private System.Windows.Forms.ComboBox cmbAiD;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox cmbBiD2;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

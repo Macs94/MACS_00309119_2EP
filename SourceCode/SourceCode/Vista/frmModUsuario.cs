@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 using SourceCode.Controladores;
 using SourceCode.Modelo;
 
-namespace SourceCode
+namespace SourceCode.Vista
 {
     public partial class frmModUsuario : Form
     {

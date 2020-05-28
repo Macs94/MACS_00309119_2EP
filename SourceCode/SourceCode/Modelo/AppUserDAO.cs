@@ -50,7 +50,7 @@ namespace SourceCode.Modelo
             ConnectionBD.ExecuteNonQuery(act);
         }
         
-        public static void eliminarUser(int idUser)
+        public static void removeUser(int idUser)
         {
             string act = String.Format(
                 "delete from \"AppUser\" where \"idUser\"={0};",

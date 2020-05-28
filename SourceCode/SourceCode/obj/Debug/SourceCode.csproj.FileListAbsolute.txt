@@ -8,8 +8,6 @@ C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debu
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.pdb
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.exe.config
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.frmInicioSesion.resources
-C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.frmModUsuario.resources
-C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.frmPrincipal.resources
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\Npgsql.dll
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\System.Buffers.dll
@@ -32,3 +30,5 @@ C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debu
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\bin\Debug\System.ValueTuple.xml
 C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.csproj.CopyComplete
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.Vista.frmModUsuario.resources
+C:\Users\Mario\Desktop\POO-2020\MACS_00309119_2EP\SourceCode\SourceCode\obj\Debug\SourceCode.Vista.frmPrincipal.resources

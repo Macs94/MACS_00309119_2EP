@@ -38,7 +38,7 @@ namespace SourceCode.Modelo
             ConnectionBD.ExecuteNonQuery(act);
         }
         
-        public static void eliminarBusiness(int idBusiness)
+        public static void removeBusiness(int idBusiness)
         {
             string act = String.Format(
                 "delete from \"Business\" where \"idBusiness\"={0};",

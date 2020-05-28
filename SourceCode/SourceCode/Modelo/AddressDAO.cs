@@ -7,9 +7,10 @@ namespace SourceCode.Modelo
 {
     public class AddressDAO
     {
+
         public static List<Address> getLista(int idUser)
         {
-            string query = String.Format("Select ad.\"idAdress\", ad.\"address\" from \"Address\" where \"idUser\"={0}",
+            string query = String.Format("Select ad.\"idAddress\", ad.\"address\" from \"Address\" ad  where \"idUser\"={0}",
                 idUser);
      
 
@@ -30,18 +31,18 @@ namespace SourceCode.Modelo
             return lista;
         }
 
-        public static void addAddress( Address a)
+        public static void addAddress(Address a)
         {
             string act = String.Format(
                 "insert into \"Address\"" + 
                 "(\"idUser\", \"address\")" +
                 "values ({0}, '{1}');",
                 a.idUser, a.address);
-                
+
             ConnectionBD.ExecuteNonQuery(act);
         }
         
-        public static void eliminarAddress(int idAddress)
+        public static void removeAddress(int idAddress)
         {
             string act = String.Format(
                 "delete from \"Address\" where \"idAdress\"={0};",

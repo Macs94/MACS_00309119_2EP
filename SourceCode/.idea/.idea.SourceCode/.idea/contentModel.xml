@@ -34,6 +34,9 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
+        <e p="Resources" t="Include">
+          <e p="hugo_logo.png" t="Include" />
+        </e>
         <e p="SourceCode.csproj" t="IncludeRecursive" />
         <e p="Vista" t="Include">
           <e p="frmInicioSesion.cs" t="Include" />

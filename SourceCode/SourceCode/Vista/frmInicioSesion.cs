@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SourceCode.Controladores;
 using SourceCode.Modelo;
+using SourceCode.Vista;
 
 namespace SourceCode
 {

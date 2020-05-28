@@ -37,7 +37,9 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnCambiarPassword = new System.Windows.Forms.Button();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -58,6 +60,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtPassword, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnCambiarPassword, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnIniciarSesion, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -163,11 +166,24 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::SourceCode.Properties.Resources.hugo_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 173);
+            this.pictureBox1.Name = "pictureBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.pictureBox1, 5);
+            this.pictureBox1.Size = new System.Drawing.Size(354, 419);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.DarkOrchid;
             this.ClientSize = new System.Drawing.Size(976, 685);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -179,6 +195,7 @@
             this.Load += new System.EventHandler(this.frmInicioSesion_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
 
@@ -192,5 +209,6 @@
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnCambiarPassword;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
