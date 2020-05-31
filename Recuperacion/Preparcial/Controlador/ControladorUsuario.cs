@@ -16,7 +16,7 @@ namespace Preparcial.Controlador
             try
             {
                 tableUsuarios = ConexionBD.EjecutarConsulta("SELECT * FROM USUARIO");
-                //método foreach dentro del bloque try
+                //Corrección: Método foreach dentro del bloque try
                 foreach (DataRow dr in tableUsuarios.Rows)
                 {
                     usuarios.Add(new Usuario
@@ -73,7 +73,8 @@ namespace Preparcial.Controlador
         {
             try
             {
-                ConexionBD.EjecutarComando("INSERT INTO USUARIO(nombreUsuario, contrasenia, tipo)" +
+                //Corrección: Error en nombre de columna de BD "nombreUsuario" a "nombre"
+                ConexionBD.EjecutarComando("INSERT INTO USUARIO(nombre, contrasenia, tipo)" +
                     $" VALUES('{usuario}', '{usuario}', false)");
 
                 MessageBox.Show("Se ha agregado el nuevo usuario, contrasenia igual al nombre");

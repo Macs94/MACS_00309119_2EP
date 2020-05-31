@@ -18,7 +18,12 @@ namespace Preparcial.Vista
 
         private void bttnCreateUser_Click(object sender, EventArgs e)
         {
-            if (!txtNewUser.Text.Equals(""))
+            //Corrección: Añadir condición si se deja un campo vacío 
+            if (txtNewUser.Text.Equals(""))
+            {
+                MessageBox.Show("No se puede dejar el campo vacío");
+            }
+            else
             {
                 ControladorUsuario.CrearUsuario(txtNewUser.Text);
                 ActualizarCrearUsuario();
@@ -99,6 +104,10 @@ namespace Preparcial.Vista
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Correccion: añadir condición cuando el usuario no es admitido en una pestaña retorna a tab general
+            if(tabControl1.SelectedTab.Name.Equals("generalTab"))
+                return;
+            
             if (tabControl1.SelectedTab.Name.Equals("createNewUserTab") && u.Admin)
                 ActualizarCrearUsuario();
 

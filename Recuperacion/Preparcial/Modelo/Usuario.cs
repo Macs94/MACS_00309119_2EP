@@ -17,5 +17,9 @@
             Contrasena = contrasenia;
             Admin = admin;
         }
+
+        public Usuario()
+        {
+        }
     }
 }

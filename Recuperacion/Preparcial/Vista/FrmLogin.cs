@@ -29,7 +29,7 @@ namespace Preparcial
         private void PoblarControlers()
         {
             cmbUser.DataSource = null;
-            //modificar nombre de VAlueMember de "Contrasenia" a "Contrasena"
+            //Corrección:modificar nombre de ValueMember de "Contrasenia" a "Contrasena"
             cmbUser.ValueMember = "Contrasena";
             cmbUser.DisplayMember = "NombreUsuario";
             cmbUser.DataSource = ControladorUsuario.GetUsuarios();
@@ -43,7 +43,7 @@ namespace Preparcial
             {
                 // Crear ventana principal enviandole el item seleccionado
                 // Recordar que SelectedItem devuelve un objeto, con polimorfismo se convierte a Usuario
-                // Declaración de usuario 
+                
                 FrmMain frmMain = new FrmMain((Usuario)cmbUser.SelectedItem);
                 // Esconder frmLogin y mostrar frmMain
                 Hide();

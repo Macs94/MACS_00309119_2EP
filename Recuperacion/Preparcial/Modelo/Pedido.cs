@@ -8,10 +8,10 @@ namespace Preparcial.Modelo
 {
     public class Pedido
     {
-        public string idPedido { get; }
-        public string idUsuario { get; }
-        public string idArticulo { get; }
-        public string cantidad { get; }
+        public string idPedido { get; set; }
+        public string idUsuario { get; set; }
+        public string idArticulo { get; set; }
+        public string cantidad { get; set; }
 
         public Pedido(string idPedido, string idUsuario, string idArticulo, string cantidad)
         {
